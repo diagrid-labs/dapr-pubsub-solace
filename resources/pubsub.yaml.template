@@ -1,0 +1,14 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub-solace
+spec:
+  type: pubsub.solace.amqp
+  version: v1
+  metadata:
+  - name: url
+    value: "ampq://"
+  - name: username
+    value: ""
+  - name: password
+    value: ""
