@@ -7,8 +7,8 @@ spec:
   version: v1
   metadata:
   - name: url
-    value: "ampq://"
+    value: "amqps://<SOLACE_SECURED_AMQP_HOST>"
   - name: username
-    value: ""
+    value: "<SOLACE_USER_NAME>"
   - name: password
-    value: ""
+    value: "<SOLACE_PASSWORD>"
