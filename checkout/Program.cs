@@ -3,14 +3,16 @@ using Dapr.Client;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-for (int i = 1; i <= 10; i++) {
+int i = 1;
+while (true) {
     var order = new Order(i);
     using var client = new DaprClientBuilder().Build();
 
     // Publish an event/message using Dapr PubSub
-    await client.PublishEventAsync("pubsub-component", "orders", order);
+    await client.PublishEventAsync("pubsub-component", "topic:marc/orders", order);
     Console.WriteLine("Published data: " + order);
 
+    i++;
     await Task.Delay(TimeSpan.FromSeconds(1));
 }
 
