@@ -2,7 +2,9 @@
 
 In this demo, you'll run publisher and subscriber microservices locally, and send/receive messages using [Solace Cloud](https://solace.com/products/platform/cloud/), to demonstrate how Dapr enables a [publish-subscribe](https://docs.dapr.io/developing-applications/building-blocks/pubsub/) pattern.
 
-The publisher service (`checkout`) will generate messages and send these to a specific topic (`orders`), while the subscriber service (`order-processor`) will listen for messages at the same topic. See the [Dapr pub/sub overview](https://docs.dapr.io/developing-applications/building-blocks/pubsub/pubsub-overview/) to understand when this pattern might be a good choice for your software architecture.
+![Dapr pub/sub using Solace](images/dapr_pubsub_solace.png)
+
+The publisher service (`checkout`) will generate messages and send these to a specific topic (`topic:marc/orders`), while the subscriber service (`order-processor`) will listen for messages at the same topic. See the [Dapr pub/sub overview](https://docs.dapr.io/developing-applications/building-blocks/pubsub/pubsub-overview/) to understand when this pattern might be a good choice for your software architecture.
 
 With Dapr, the application code is using set of common building block APIs. The pub/sub API is such a building block. Dapr allows to switch between different pub/sub implementations by using component files. These are yaml files that contain resource specific information. This means the application code is not coupled to the implementation of the pub/sub resource. In this demo the [Solace AMQP component](https://docs.dapr.io/reference/components-reference/supported-pubsub/setup-solace-amqp/) is used.
 
